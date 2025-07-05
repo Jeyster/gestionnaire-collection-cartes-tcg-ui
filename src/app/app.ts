@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { Gestionnairecollection } from './gestionnairecollection/gestionnairecollection';
+import { Games } from './games/games';
 
 @Component({
   selector: 'app-root',
   imports: [
-    Gestionnairecollection
+    Games
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

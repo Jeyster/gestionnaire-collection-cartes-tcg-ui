@@ -4,14 +4,19 @@ import { GameService } from '../services/game-service';
 import { CommonModule } from '@angular/common';
 import { Card } from '../interfaces/card';
 import { CardService } from '../services/card-service';
+import { GameCard } from './game-card/game-card';
 
 @Component({
-  selector: 'app-gestionnairecollection',
-  imports: [CommonModule],
-  templateUrl: './gestionnairecollection.html',
-  styleUrl: './gestionnairecollection.css'
+  selector: 'app-games',
+  imports: [
+    CommonModule,
+    GameCard
+  ],
+  templateUrl: './games.html',
+  styleUrl: './games.css',
+  standalone: true
 })
-export class Gestionnairecollection implements OnInit {
+export class Games implements OnInit {
   protected games: Game[] = [];
   protected cards: Card[] = [];
 
