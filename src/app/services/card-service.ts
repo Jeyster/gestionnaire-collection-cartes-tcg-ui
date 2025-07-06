@@ -13,5 +13,8 @@ export class CardService {
     return this.http.get<Card[]>('/gestionnairecollectioncartestcg/rest/card/api/all');
   }
 
+  getCardsByGameName(gameName: string) {
+    return this.http.get<Card[]>('/gestionnairecollectioncartestcg/rest/card/api/searchByGame?game=' + gameName);
+  }
 
 }

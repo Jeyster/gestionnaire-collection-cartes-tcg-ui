@@ -1,1 +1,7 @@
-<p>cards works!</p>
+<div *ngFor="let card of cards">
+    <app-card-card [card]="card"></app-card-card>
+</div>
+
+<div>
+    <button (click)="retour()">Retour</button>
+</div>

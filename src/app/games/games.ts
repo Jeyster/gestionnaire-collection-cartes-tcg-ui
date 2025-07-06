@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Game } from '../interfaces/game';
 import { GameService } from '../services/game-service';
 import { CommonModule } from '@angular/common';
-import { Card } from '../interfaces/card';
-import { CardService } from '../services/card-service';
 import { GameCard } from './game-card/game-card';
 
 @Component({
@@ -17,23 +15,16 @@ import { GameCard } from './game-card/game-card';
   standalone: true
 })
 export class Games implements OnInit {
+  
   protected games: Game[] = [];
-  protected cards: Card[] = [];
 
-  constructor(private gameService: GameService, private cardService: CardService) {}
+  constructor(private gameService: GameService) {}
   
   ngOnInit(): void {
     this.gameService.getGames()
     .subscribe({
       next: (game: Game[]) => {
         this.games = game;
-      }
-    });
-
-    this.cardService.getCards()
-    .subscribe({
-      next: (card: Card[]) => {
-        this.cards = card;
       }
     });
   }
